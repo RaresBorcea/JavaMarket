@@ -21,27 +21,35 @@ public class Test {
         while((line = file.readLine()) != null) {
             Department m;
             elem = line.split(";");
-            if(elem[0].equals("MusicDepartment")) {
-                m = (MusicDepartment) new MusicDepartment.MusicBuilder("MusicDepartment", Integer.parseInt(elem[1]))
-                        .items()
-                        .customers()
-                        .build();
-            } else if(elem[0].equals("BookDepartment")) {
-                m = (BookDepartment) new BookDepartment.BookBuilder("BookDepartment", Integer.parseInt(elem[1]))
-                        .items()
-                        .customers()
-                        .build();
-            } else if(elem[0].equals("VideoDepartment")) {
-                m = (VideoDepartment) new VideoDepartment.VideoBuilder("VideoDepartment", Integer.parseInt(elem[1]))
-                        .items()
-                        .customers()
-                        .build();
-            } else {
-                m = (SoftwareDepartment) new SoftwareDepartment.SoftwareBuilder("SoftwareDepartment", Integer.parseInt(elem[1]))
-                        .items()
-                        .customers()
-                        .build();
-            }
+            switch(elem[0]) {
+                    case "MusicDepartment":
+                        m = (MusicDepartment) new MusicDepartment.MusicBuilder("MusicDepartment", Integer.parseInt(elem[1]))
+                            .items()
+                            .customers()
+                            .build();
+                        break;
+                    
+                    case "BookDepartment":
+                        m = (BookDepartment) new BookDepartment.BookBuilder("BookDepartment", Integer.parseInt(elem[1]))
+                            .items()
+                            .customers()
+                            .build();
+                        break;
+                    
+                    case "VideoDepartment":
+                        m = (VideoDepartment) new VideoDepartment.VideoBuilder("VideoDepartment", Integer.parseInt(elem[1]))
+                            .items()
+                            .customers()
+                            .build();
+                        break;
+                    
+                    default:
+                        m = (SoftwareDepartment) new SoftwareDepartment.SoftwareBuilder("SoftwareDepartment", Integer.parseInt(elem[1]))
+                            .items()
+                            .customers()
+                            .build();
+            } 
+            
             line = file.readLine();
             int noOfProducts = Integer.parseInt(line);
             for(int i = 0; i < noOfProducts; i++) {
