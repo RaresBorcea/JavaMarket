@@ -3,7 +3,7 @@ import java.util.Comparator;
 import java.util.ListIterator;
 import java.util.Vector;
 
-public class WishList extends ItemList{
+public class WishList extends ItemList {
 	private Strategy strategy;
 
 	WishList(Comparator comp, Strategy strategy) {
@@ -21,7 +21,7 @@ public class WishList extends ItemList{
 		return (Double)s;
 	}
 	
-	//selects item to add to cart based on customer strategy
+	// selects item to add to cart based on customer strategy
 	public Item executeStrategy() {
 		return strategy.execute(this);
 	}
@@ -79,7 +79,7 @@ public class WishList extends ItemList{
 		return null;
 	}
 	
-	//returns item from wishlist based in its ID
+	// returns item from wishlist based in its ID
 	public Item getItemWithID(int ID) {
 		ListIterator it = listIterator();
 		while(it.hasNext()) {
@@ -91,7 +91,7 @@ public class WishList extends ItemList{
 		return null;
 	}
 	
-	//returns items from wishlist in alphabetical order
+	// returns items from wishlist in alphabetical order
 	public String toString() {
 		Vector<Item> items = new Vector();
 		String s = new String();
