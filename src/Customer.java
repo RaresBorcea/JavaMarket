@@ -3,17 +3,17 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.Vector;
 
-public class Customer implements Observer{
+public class Customer implements Observer {
 	private String name;
 	private ShoppingCart cart;
 	private WishList wishes;
 	private Vector notifications;
 
-	//builds customer fields using each one's strategy
+	// builds customer fields using each one's strategy
 	Customer(String name, double budget, Strategy strategy) {
 		this.name = name;
 		cart = new ShoppingCart(new CompCartAndA(), budget);
-		//depending on strategies, we use different comparators
+		// depending on strategies, we use different comparators
 		if(strategy instanceof StrategyA) {
 			wishes = new WishList(new CompCartAndA(), strategy);
 		} else if(strategy instanceof StrategyB) {
@@ -52,7 +52,7 @@ public class Customer implements Observer{
 		int i;
 		ListIterator it;
 		Vector items;
-		//modifies customer lists based on notification type
+		// modifies customer lists based on notification type
 		switch(type) {
 		case REMOVE:
 			it = wishes.listIterator();
@@ -66,7 +66,7 @@ public class Customer implements Observer{
 			}
 			Department d = (Department)department;
 			items = d.getItems();
-			//after removing from wishlist, should check if customer is still an observer
+			// after removing from wishlist, should check if customer is still an observer
 			boolean stillObserver = false;
 			for(int j = 0; j < items.size(); j++) {
 				Item item = (Item)items.get(j);
