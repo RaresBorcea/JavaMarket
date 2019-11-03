@@ -1,7 +1,7 @@
 import java.util.Vector;
 
 public class Store {
-	//using Singleton pattern for store creation
+	// using Singleton pattern for store creation
 	private static Store instance = null;
 	String name;
 	Vector departments;
