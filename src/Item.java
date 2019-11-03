@@ -35,7 +35,7 @@ public class Item {
 		this.price = price;
 	}
 	
-	//using java.util.Locale to respect output format
+	// using java.util.Locale to respect output format
 	public String toString() {
 		String s = new String();
 		String pr = String.format(Locale.US, "%.2f", price);
