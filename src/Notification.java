@@ -45,7 +45,7 @@ public class Notification {
 		return s;
 	}
 	
-	//for the interface, also display the Date the notification was sent
+	// for the interface, also display the Date the notification was sent
 	public String toStringForInterface() {
 		String s = new String();
 		s += date + ": Type - ";
