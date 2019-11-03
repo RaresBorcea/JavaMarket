@@ -22,7 +22,7 @@ public class ShoppingCart extends ItemList implements Visitor {
 		budget -= amount;
 	}
 
-	//called from the accept methods; visits and applies discounts
+	// called from the accept methods; visits and applies discounts
 	public void visit(BookDepartment bookDepartment) {
 		ListIterator it = listIterator();
 		double price;
