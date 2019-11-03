@@ -2,13 +2,13 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.*;
 
-public abstract class Department extends Observable implements Subject{
+public abstract class Department extends Observable implements Subject {
 	private String name;
 	private Vector items;
 	private Vector customers;
 	private int ID;
 	
-	//using the builder pattern to create store departments
+	// using the builder pattern to create store departments
 	protected Department(DepartmentBuilder builder) {
 		this.name = builder.name;
 		this.ID = builder.ID;
@@ -65,11 +65,11 @@ public abstract class Department extends Observable implements Subject{
 		notifyObservers(n);
 	}
 	
-	//returns observers as a String
+	// returns observers as a String
 	public String getObservers() {
 		String s = new String();
 		s += "[";
-		//using reflections to get observers from Observable superclass
+		// using reflections to get observers from Observable superclass
 		Field f;
 		try {
 			f = Department.class.getSuperclass().getDeclaredField("obs");
@@ -77,7 +77,7 @@ public abstract class Department extends Observable implements Subject{
 			s += "]";
 			return s;
 		}
-		//this way, we made the field accessible
+		// this way, we made the field accessible
 		f.setAccessible(true);
 		Vector set; 
 		try {
@@ -98,7 +98,7 @@ public abstract class Department extends Observable implements Subject{
 	    return s;
 	}
 	
-	//returns observers as a Vector of customers
+	// returns observers as a Vector of customers
 	public Vector<Customer> getVectorObservers() {
 		Vector<Customer> s = new Vector();
 		Field f;
@@ -148,7 +148,7 @@ public abstract class Department extends Observable implements Subject{
 		public abstract Department build();
 	}
 	
-	//checks whether a department contains an element by its ID
+	// checks whether a department contains an element by its ID
 	public boolean containsID(int ID) {
 		for(int i = 0; i < items.size(); i++) {
 			if(((Item)items.get(i)).getID() == ID) {
@@ -158,7 +158,7 @@ public abstract class Department extends Observable implements Subject{
 		return false;
 	}
 	
-	//returns most bought item from this department
+	// returns most bought item from this department
 	public Item mostBought() {
 		int max = 0;
 		Item most = null;
@@ -183,7 +183,7 @@ public abstract class Department extends Observable implements Subject{
 		return most;
 	}
 	
-	//returns most wanted item from this department
+	// returns most wanted item from this department
 	public Item mostWanted() {
 		int max = 0;
 		Item most = null;
@@ -209,7 +209,7 @@ public abstract class Department extends Observable implements Subject{
 		return most;
 	}
 	
-	//returns most expensive item from this department
+	// returns most expensive item from this department
 	public Item mostExpensive() {
 		Item most = null;
 		double max = 0;
