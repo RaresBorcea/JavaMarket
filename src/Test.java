@@ -23,28 +23,29 @@ public class Test {
             elem = line.split(";");
             switch(elem[0]) {
                     case "MusicDepartment":
-                        m = (MusicDepartment) new MusicDepartment.MusicBuilder("MusicDepartment", Integer.parseInt(elem[1]))
+                        m = (MusicDepartment) new MusicDepartment.MusicBuilder("MusicDepartment", 
+                            Integer.parseInt(elem[1]))
                             .items()
                             .customers()
                             .build();
                         break;
-                    
                     case "BookDepartment":
-                        m = (BookDepartment) new BookDepartment.BookBuilder("BookDepartment", Integer.parseInt(elem[1]))
+                        m = (BookDepartment) new BookDepartment.BookBuilder("BookDepartment", 
+                            Integer.parseInt(elem[1]))
                             .items()
                             .customers()
                             .build();
                         break;
-                    
                     case "VideoDepartment":
-                        m = (VideoDepartment) new VideoDepartment.VideoBuilder("VideoDepartment", Integer.parseInt(elem[1]))
+                        m = (VideoDepartment) new VideoDepartment.VideoBuilder("VideoDepartment", 
+                            Integer.parseInt(elem[1]))
                             .items()
                             .customers()
                             .build();
                         break;
-                    
                     default:
-                        m = (SoftwareDepartment) new SoftwareDepartment.SoftwareBuilder("SoftwareDepartment", Integer.parseInt(elem[1]))
+                        m = (SoftwareDepartment) new SoftwareDepartment.SoftwareBuilder("SoftwareDepartment", 
+                            Integer.parseInt(elem[1]))
                             .items()
                             .customers()
                             .build();
