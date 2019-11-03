@@ -6,9 +6,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-class CompCartAndA implements Comparator<Item>{
-	//comparator for cart and StrategyA
-	public int compare(Item o1, Item o2){
+class CompCartAndA implements Comparator<Item> {
+	// comparator for cart and StrategyA
+	public int compare(Item o1, Item o2) {
 		double p1 = o1.getPrice();
 		double p2 = o2.getPrice();
 		if(p1 < p2) {
@@ -27,9 +27,9 @@ class CompCartAndA implements Comparator<Item>{
 	}
 }
 
-class CompB implements Comparator<Item>{
-	//comparator for StrategyB
-	public int compare(Item o1, Item o2){
+class CompB implements Comparator<Item> {
+	// comparator for StrategyB
+	public int compare(Item o1, Item o2) {
 		if(o1.getName().compareTo(o2.getName()) < 0) {
 			return -1;
 		} else if(o1.getName().compareTo(o2.getName()) > 0) {
@@ -42,16 +42,16 @@ class CompB implements Comparator<Item>{
 	}
 }
 
-class CompC implements Comparator<Item>{
-	//comparator for StrategyC
-	public int compare(Item o1, Item o2){
+class CompC implements Comparator<Item> {
+	// comparator for StrategyC
+	public int compare(Item o1, Item o2) {
 		return -1;
 	}
 }
 
-class CompDesc implements Comparator<Item>{
-	//comparator for descending prices
-	public int compare(Item o2, Item o1){
+class CompDesc implements Comparator<Item> {
+	// comparator for descending prices
+	public int compare(Item o2, Item o1) {
 		double p1 = o1.getPrice();
 		double p2 = o2.getPrice();
 		if(p1 < p2) {
