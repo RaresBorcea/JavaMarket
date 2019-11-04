@@ -8,4 +8,4 @@ You may also run the Test file, a cli version of the app. It requires the test f
 ### Screenshots
 <img src="https://imgur.com/gSMRonB.png" width="295">  <img src="https://imgur.com/EzDXJ2s.png" width="295">
 <img src="https://imgur.com/c1ZAj3P.png" width="275">  <img src="https://imgur.com/Z6YS8NF.png" width="300">  
-<img src="https://imgur.com/QwdAMqb.png" width="146">  <img src="https://imgur.com/HqQHUCj.png" width="146"> 
+<img src="https://imgur.com/QwdAMqb.png" width="270">  <img src="https://imgur.com/HqQHUCj.png" width="295"> 
